@@ -1,4 +1,5 @@
-﻿using DataAccess.DTO;
+﻿using DataAccess.DAO;
+using DataAccess.DTO;
 using DataAccess.Models;
 using Repository;
 using System;
@@ -18,14 +19,13 @@ namespace DogCatManagement
     {   
         private UserDTO user;
         private IUserRepository _userRepository;
-        public CustomerForm(UserDTO user)
+        private UserSession userSession;
+        public CustomerForm(UserDTO user, UserSession userSession)
         {
             InitializeComponent();
             this.user = user;
+            this.userSession = userSession;
             _userRepository = new UserRepository();
-
-          
-
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -43,9 +43,9 @@ namespace DogCatManagement
 
         private void btnBackCustomer_Click(object sender, EventArgs e)
         {
-/*            AdminHomePage page = new AdminHomePage();
+            AdminHomePage page = new AdminHomePage(userSession);
             this.Hide();
-            page.Show();*/
+            page.Show();
         }
 
         private void CustomerForm_Load(object sender, EventArgs e)

@@ -19,13 +19,16 @@ namespace DogCatManagement
     {
         private IUserRepository _userRepository;
         private IPostRepository _postRepository;
+        private IReportRepository _reportRepository;
         private UserSession _userSession;
         public AdminHomePage(UserSession userSession)
         {   
             InitializeComponent();
+            // Khai bao Service
             _userRepository = new UserRepository();
             _postRepository = new PostRepository();
             _userSession = userSession;
+            _reportRepository = new ReportRepository();
             // Add Value into combobox 
             Dictionary<string, string> combobox = new Dictionary<string, string>();
             combobox.Add("customer", "Khách hàng");
@@ -40,6 +43,13 @@ namespace DogCatManagement
         {
 
         }
+        // ADmin Form Load
+        private void AdminHomePage_Load(object sender, EventArgs e)
+        {
+            int id = _userSession.UserId;
+            string name = _userRepository.getUserByID(id).UserName;
+            lbWelcome.Text = "Welcome  " + name;
+        }
         // Logout Click
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -47,23 +57,23 @@ namespace DogCatManagement
             this.Hide();
             loginForm.Show();
         }
-
         // Load Customer Data
         public void LoadCustomerData()
         {
             dgvData.DataSource = _userRepository.GetAllUserList();
         }
-
-
-
+        // Chooose area to show in admin
         private void cbbDataAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedcbb = cbbDataAdmin.SelectedValue.ToString();
             switch (selectedcbb)
             {
                 case "post":
-                    dgvData.DataSource = dgvData.DataSource = _postRepository.GetAllPost().Select(c => new { c.UserId, c.PostId, c.Title, c.Content, c.PostDate, c.Status, c.User.UserName }).ToList();
+                    dgvData.DataSource = dgvData.DataSource = _postRepository.GetAllPost().Select(c =>  new { c.UserId, c.PostId, c.Title, c.Content, c.PostDate, c.Status, c.User.UserName }).ToList();
                     gbPost.Visible = true;
+                    txtSearchPost.Visible = true;
+                    txtReportSearch.Visible = false;
+                    txtSearchUser.Visible = false;
                     gbCustomer.Visible = false;
                     gbReport.Visible = false;
                     break;
@@ -72,31 +82,33 @@ namespace DogCatManagement
                     gbCustomer.Visible = true;
                     gbPost.Visible = false;
                     gbReport.Visible = false;
+                    txtSearchPost.Visible = false;
+                    txtReportSearch.Visible = false;
+                    txtSearchUser.Visible = true;
                     break;
                 case "report":
-                    dgvData.DataSource = "Hello";
+                    dgvData.DataSource = _reportRepository.GetAllReportList().Select(c => new {c.ReportId,c.UserId, c.PostId, c.ReportDate,c.ReportReason,c.User.UserName, c.Post.Title}).ToList();
                     gbCustomer.Visible=false;
                     gbPost.Visible = false;
                     gbReport.Visible = true;
+                    txtSearchPost.Visible = false;
+                    txtReportSearch.Visible = true;
+                    txtSearchUser.Visible = false;
                     break;
             }
         }
-
         // Post Area
         // Get Empty Post 
         private Post getEmptyPost()
         {
             Post post = new Post();
-            if (dgvData.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dgvData.SelectedRows[0];
-                post.Content = "";
-                post.Status = "";
-                post.Content = "";
+
+                post.Title = "Nhập tiêu đề ở đây...";
+                post.Status = "Pending";
+                post.Content = "Nhập nội dung ở đây...";
                 post.PostDate = DateTime.Now;
                 post.UserId = _userSession.UserId;
-            }
-            return post;
+                return post;
         }
         // Get Post From Data
         private Post getPostFromDataGirdView()
@@ -120,28 +132,55 @@ namespace DogCatManagement
             Post updatepost = new Post();
             updatepost = getPostFromDataGirdView();
             this.Hide();
-            PostForm postform = new PostForm(updatepost);
+            PostForm postform = new PostForm(updatepost,_userSession.UserId);
             postform.Show();
         }
-
+        // Add Post
         private void btnPostAdd_Click(object sender, EventArgs e)
         {
-            Post post = getEmptyPost();
-            PostForm postForm = new PostForm(post);
+            Post emptyPost = getEmptyPost();
+            PostForm postForm = new PostForm(emptyPost,_userSession.UserId);
             this.Hide();
             postForm.Show();
         }
+        // Search Post
+        private void txtSearchPost_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+        // PostDelete   
         private void btnPostDelete_Click(object sender, EventArgs e)
         {
 
         }
-
+        // Report Area
+        // Get Report From Form
+        private Report getReportFromDataGirdView()
+        {
+            Report report = new Report();
+            if (dgvData.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvData.SelectedRows[0];
+                report.ReportId = Int32.Parse(selectedRow.Cells["ReportId"].Value.ToString());
+                report.UserId = Int32.Parse(selectedRow.Cells["UserId"].Value.ToString());
+                report.PostId = Int32.Parse(selectedRow.Cells["PostId"].Value.ToString());
+                report.ReportReason = selectedRow.Cells["ReportReason"].Value.ToString();
+                report.ReportDate = DateTime.Parse(selectedRow.Cells["ReportDate"].Value.ToString());
+            }
+            return report;
+        }
+        // View Detail Report
         private void btn_Click(object sender, EventArgs e)
         {
-
+            Report report = new Report();
+            report = getReportFromDataGirdView();
+            if (report != null)
+            {
+                ReportForm form = new ReportForm(report,_userSession);
+                this.Hide();
+                form.Show();
+            }
         }
-
         private void btnReportDelete_Click(object sender, EventArgs e)
         {
 
@@ -151,18 +190,12 @@ namespace DogCatManagement
         {
 
         }
-
-        private void AdminHomePage_Load(object sender, EventArgs e)
-        {
-            int id = _userSession.UserId;
-            txtSearchAdmin.Text = id.ToString();
-        }
         // Customer Area
         // Button Add User
         private void btnAdd_Click(object sender, EventArgs e)
         {
             UserDTO user = getEmptyUser(); 
-            CustomerForm frm = new CustomerForm(user);
+            CustomerForm frm = new CustomerForm(user, _userSession);
             this.Hide();
             frm.Show();  
         }
@@ -170,7 +203,7 @@ namespace DogCatManagement
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             UserDTO user = getUserFromDataGirdView();
-            CustomerForm frm = new CustomerForm(user);
+            CustomerForm frm = new CustomerForm(user, _userSession);
             this.Hide();
             frm.Show();
         }
@@ -222,6 +255,10 @@ namespace DogCatManagement
                 user.RoleId = Int32.Parse(selectedRow.Cells["RoleId"].Value.ToString());
             }
             return user;
+        }
+        private void txtReportSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

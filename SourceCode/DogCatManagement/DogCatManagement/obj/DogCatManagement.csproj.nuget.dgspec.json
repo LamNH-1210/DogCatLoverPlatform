@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj": {}
+    "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,14 +93,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj": {
+    "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj",
         "projectName": "DogCatManagement",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DogCatManagement\\DogCatManagement.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DogCatManagement\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DogCatManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -121,11 +121,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\Repository\\Repository.csproj"
+              "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\Repository\\Repository.csproj"
               }
             }
           }
@@ -172,14 +172,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\Repository\\Repository.csproj": {
+    "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -200,8 +200,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\Semester 7\\PRN211\\DogCatManagement\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\DogCatLoverPlatform\\SourceCode\\DogCatManagement\\DataAccess\\DataAccess.csproj"
               }
             }
           }

@@ -13,5 +13,6 @@ namespace Repository
         bool UpdatePostByAdmin(Post post);
         bool DeletePostByAdmin(Post post);
         void CreatePostByAdmin(Post post);
+        Post getPostByID(int postid);
     }
 }

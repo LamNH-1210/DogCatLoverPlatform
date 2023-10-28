@@ -98,5 +98,20 @@ namespace DataAccess.DAO
                 return false;
             }
         }
+
+        // GetPostByID
+        public Post getPostByID(int postid)
+        {
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                return dbContext.Posts.FirstOrDefault(m => m.PostId == postid);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
