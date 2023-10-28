@@ -5,9 +5,11 @@ namespace DataAccess.Models
 {
     public partial class Post
     {
+
         public Post()
         {
             Reports = new HashSet<Report>();
+
         }
 
         public int PostId { get; set; }

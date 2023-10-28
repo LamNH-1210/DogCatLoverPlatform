@@ -27,6 +27,7 @@ namespace DataAccess.DAO
             }
         }
 
+
         // Get All User 
         public List<Post> GetAllPost()
         {
@@ -40,14 +41,14 @@ namespace DataAccess.DAO
                 throw new Exception(ex.Message);
             }
         }
-        
+
         public void CreatePostByAdmin(Post post)
         {
             try
             {
                 var dbContext = new DogCatLoverPlatformDBContext();
-                 dbContext.Add(post);
-                 dbContext.SaveChanges();
+                dbContext.Add(post);
+                dbContext.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -55,9 +56,10 @@ namespace DataAccess.DAO
             }
         }
 
-        public bool UpdatePostByAdmin (Post post)
+        public bool UpdatePostByAdmin(Post post)
         {
-            try {
+            try
+            {
                 var dbContext = new DogCatLoverPlatformDBContext();
                 var postupdate = dbContext.Posts.FirstOrDefault(u => u.PostId == post.PostId);
                 if (postupdate != null)
@@ -98,5 +100,65 @@ namespace DataAccess.DAO
                 return false;
             }
         }
+
+        // GetPostByID
+        public Post getPostByID(int postid)
+        {
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                return dbContext.Posts.FirstOrDefault(m => m.PostId == postid);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void CreatePostByMemeber(Post post)
+        {
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                dbContext.Add(post);
+                dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<Post> GetPosts()
+        {
+
+            try
+            {
+                var dbContent = new DogCatLoverPlatformDBContext();
+                return dbContent.Posts.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeletePost(int postid)
+        {
+            try
+            {
+                var dbContent = new DogCatLoverPlatformDBContext();
+                Post postInfo = getPostByID(postid);
+                if(postInfo != null)
+                {
+                    dbContent.Posts.Remove(postInfo);
+                    dbContent.SaveChanges();
+                }
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
+
 }

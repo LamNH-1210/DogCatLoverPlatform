@@ -28,148 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.linkSignup = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnCancle = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            linkSignup = new LinkLabel();
+            label3 = new Label();
+            txtPassword = new TextBox();
+            txtEmail = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            groupBox2 = new GroupBox();
+            btnCancle = new Button();
+            btnLogin = new Button();
+            label4 = new Label();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.linkSignup);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 84);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 194);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(linkSignup);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtPassword);
+            groupBox1.Controls.Add(txtEmail);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(14, 112);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(579, 259);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
             // 
             // linkSignup
             // 
-            this.linkSignup.AutoSize = true;
-            this.linkSignup.Location = new System.Drawing.Point(225, 140);
-            this.linkSignup.Name = "linkSignup";
-            this.linkSignup.Size = new System.Drawing.Size(79, 15);
-            this.linkSignup.TabIndex = 5;
-            this.linkSignup.TabStop = true;
-            this.linkSignup.Text = "Đăng kí ngay ";
-            this.linkSignup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSignup_LinkClicked);
+            linkSignup.AutoSize = true;
+            linkSignup.Location = new Point(257, 187);
+            linkSignup.Name = "linkSignup";
+            linkSignup.Size = new Size(100, 20);
+            linkSignup.TabIndex = 5;
+            linkSignup.TabStop = true;
+            linkSignup.Text = "Đăng kí ngay ";
+            linkSignup.LinkClicked += linkSignup_LinkClicked;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(100, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Bạn chưa có tài khoản?";
+            label3.AutoSize = true;
+            label3.Location = new Point(114, 187);
+            label3.Name = "label3";
+            label3.Size = new Size(162, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Bạn chưa có tài khoản?";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(100, 93);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(401, 23);
-            this.txtPassword.TabIndex = 3;
+            txtPassword.Location = new Point(114, 124);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(458, 27);
+            txtPassword.TabIndex = 3;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(100, 43);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(401, 23);
-            this.txtEmail.TabIndex = 2;
+            txtEmail.Location = new Point(114, 57);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(458, 27);
+            txtEmail.TabIndex = 2;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(7, 121);
+            label2.Name = "label2";
+            label2.Size = new Size(93, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Password";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(7, 60);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Email";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnCancle);
-            this.groupBox2.Controls.Add(this.btnLogin);
-            this.groupBox2.Location = new System.Drawing.Point(12, 284);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(507, 79);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(btnCancle);
+            groupBox2.Controls.Add(btnLogin);
+            groupBox2.Location = new Point(14, 379);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(579, 105);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
             // 
             // btnCancle
             // 
-            this.btnCancle.Location = new System.Drawing.Point(225, 22);
-            this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(110, 41);
-            this.btnCancle.TabIndex = 1;
-            this.btnCancle.Text = "Hủy bỏ";
-            this.btnCancle.UseVisualStyleBackColor = true;
-            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
+            btnCancle.Location = new Point(257, 29);
+            btnCancle.Margin = new Padding(3, 4, 3, 4);
+            btnCancle.Name = "btnCancle";
+            btnCancle.Size = new Size(126, 55);
+            btnCancle.TabIndex = 1;
+            btnCancle.Text = "Hủy bỏ";
+            btnCancle.UseVisualStyleBackColor = true;
+            btnCancle.Click += btnCancle_Click;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(100, 22);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(110, 41);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            btnLogin.Location = new Point(114, 29);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(126, 55);
+            btnLogin.TabIndex = 0;
+            btnLogin.Text = "Đăng nhập";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(112, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 37);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Đăng Nhập";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(128, 59);
+            label4.Name = "label4";
+            label4.Size = new Size(190, 46);
+            label4.TabIndex = 2;
+            label4.Text = "Đăng Nhập";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 392);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(610, 523);
+            Controls.Add(label4);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "LoginForm";
+            Load += LoginForm_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

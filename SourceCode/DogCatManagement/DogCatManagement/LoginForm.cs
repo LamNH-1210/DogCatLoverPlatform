@@ -37,7 +37,7 @@ namespace DogCatManagement
             string password = txtPassword.Text;
 
             // Check empty for email and password
-            if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ và mật khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -45,7 +45,7 @@ namespace DogCatManagement
             else
             {
                 User user = _userRepository.checkLogin(email, password);
-                if(user != null)
+                if (user != null)
                 {
                     int role = user.RoleId;
                     switch (role)
@@ -56,20 +56,24 @@ namespace DogCatManagement
                             customerpage.Show();
                             _userSession.UserId = user.UserId;
                             break;
+                        case 1:
+                            this.Hide();
+                            break;
+                        // for staff manager
                         case 2:
                             this.Hide();
                             _userSession.UserId = user.UserId;
                             AdminHomePage adminpage = new AdminHomePage(_userSession);
-                            adminpage.Show();   
+                            adminpage.Show();
                             break;
-                        case 3:
+                        default:
                             MessageBox.Show("Hiện tại tài khoản của bạn đang bị khóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác","Lỗi",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -85,4 +89,4 @@ namespace DogCatManagement
         }
 
     }
-} 
+}

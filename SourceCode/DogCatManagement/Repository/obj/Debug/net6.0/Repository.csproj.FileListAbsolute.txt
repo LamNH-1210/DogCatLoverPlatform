@@ -1,0 +1,15 @@
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\bin\Debug\net6.0\Repository.deps.json
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\bin\Debug\net6.0\Repository.dll
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\bin\Debug\net6.0\Repository.pdb
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\bin\Debug\net6.0\DataAccess.dll
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\bin\Debug\net6.0\DataAccess.pdb
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.dll
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\refint\Repository.dll
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\Repository.pdb
+D:\WORKSPACE\DogCatLoverPlatform\SourceCode\DogCatManagement\Repository\obj\Debug\net6.0\ref\Repository.dll

@@ -104,6 +104,7 @@
             // 
             // dtTime
             // 
+            this.dtTime.Enabled = false;
             this.dtTime.Location = new System.Drawing.Point(111, 221);
             this.dtTime.Name = "dtTime";
             this.dtTime.Size = new System.Drawing.Size(339, 23);
@@ -195,6 +196,7 @@
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Trờ về";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnReject
             // 
@@ -204,6 +206,7 @@
             this.btnReject.TabIndex = 1;
             this.btnReject.Text = "Từ chối";
             this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // btnAccept
             // 
@@ -213,6 +216,7 @@
             this.btnAccept.TabIndex = 0;
             this.btnAccept.Text = "Chấp nhận";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // PostForm
             // 
