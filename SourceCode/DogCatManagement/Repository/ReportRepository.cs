@@ -11,5 +11,9 @@ namespace Repository
     public class ReportRepository : IReportRepository
     {
         public List<Report> GetAllReportList() => ReportDAO.Instance.GetAllReportList();
+        public Report GetReportByPostID(int id) => ReportDAO.Instance.GetReportByPostID(id);
+        public void ReportPost(Report report) => ReportDAO.Instance.ReportPost(report);
+        public void AddReport(Report report) => ReportDAO.Instance.AddReport(report);
+
     }
 }

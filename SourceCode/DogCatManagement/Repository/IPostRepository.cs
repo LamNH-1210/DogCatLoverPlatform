@@ -14,8 +14,9 @@ namespace Repository
         bool DeletePostByAdmin(Post post);
         void CreatePostByAdmin(Post post);
         Post getPostByID(int postid);
-        void createPostByMemeber(Post post);
+        void CreatePostByMemeber(Post post);
         List<Post> GetPosts();
         void DeletePostByCustomer(int postid);
+        void UpdatePost(Post post);
     }
 }

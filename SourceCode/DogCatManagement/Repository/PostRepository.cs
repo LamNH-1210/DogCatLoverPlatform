@@ -12,7 +12,7 @@ namespace Repository
     {
         public void CreatePostByAdmin(Post post) => PostDAO.Instance.CreatePostByAdmin(post);
 
-        public void createPostByMemeber(Post post) => PostDAO.Instance.CreatePostByMemeber(post);
+        public void CreatePostByMemeber(Post post) => PostDAO.Instance.CreatePostByMemeber(post);
         public bool DeletePostByAdmin(Post post) => PostDAO.Instance.DeletePostByAdmin(post);
 
         public void DeletePostByCustomer(int postid) => PostDAO.Instance.DeletePost(postid);
@@ -22,8 +22,11 @@ namespace Repository
         public Post getPostByID(int postid) =>PostDAO.Instance.getPostByID(postid);
 
         public List<Post> GetPosts() => PostDAO.Instance.GetPosts();
+
+        public void UpdatePost(Post post) => PostDAO.Instance.UpdatePost(post);
+
         public bool UpdatePostByAdmin(Post post) => PostDAO.Instance.UpdatePostByAdmin(post);
 
-        
+
     }
 }

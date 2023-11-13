@@ -52,9 +52,9 @@ namespace DogCatManagement
                     {
                         case 0:
                             this.Hide();
-                            CustomerHomePage customerpage = new CustomerHomePage();
-                            customerpage.Show();
                             _userSession.UserId = user.UserId;
+                            CustomerHomePage customerpage = new CustomerHomePage(_userSession);
+                            customerpage.Show();
                             break;
                         case 1:
                             this.Hide();

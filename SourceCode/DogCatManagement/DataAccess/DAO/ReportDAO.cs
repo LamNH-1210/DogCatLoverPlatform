@@ -38,5 +38,64 @@ namespace DataAccess.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public void ReportPost(Report report)
+        {
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                dbContext.Add(report);
+                dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Report GetReportByPostID(int postId)
+        {
+
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                return dbContext.Reports.FirstOrDefault(m => m.PostId == postId);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateReport(Report report)
+        {
+            var dbContent = new DogCatLoverPlatformDBContext();
+            Report existingReport = GetReportByPostID(report.ReportId);
+
+            dbContent.Entry(existingReport).State = EntityState.Modified;
+            dbContent.SaveChanges();
+        }
+
+
+        public void AddReport(Report report)
+        {
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                Report existingReport = GetReportByPostID((int)report.PostId);
+
+                if (existingReport == null)
+                {
+                    // If the report doesn't exist, add it to the database
+                    ReportPost(report);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

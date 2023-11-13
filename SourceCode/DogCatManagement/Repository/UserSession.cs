@@ -10,7 +10,7 @@ namespace DataAccess.DAO
     public class UserSession
     {
         private static UserSession _instance;
-        private static UserSession Instance
+        public static UserSession Instance
         {
             get
             {

@@ -87,6 +87,7 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(458, 27);
             txtPassword.TabIndex = 3;
+            txtPassword.Text = "@1234";
             // 
             // txtEmail
             // 
@@ -95,6 +96,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(458, 27);
             txtEmail.TabIndex = 2;
+            txtEmail.Text = "user1@gmail.com";
             // 
             // label2
             // 

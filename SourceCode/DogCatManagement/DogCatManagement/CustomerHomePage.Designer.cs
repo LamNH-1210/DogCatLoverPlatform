@@ -41,19 +41,11 @@
             btn_CreateNewPost = new Button();
             groupBox3 = new GroupBox();
             dgv_Post = new DataGridView();
-            btn_CusPost = new CustomButton();
-            btn_Exchanged = new CustomButton();
-            btn_Free = new CustomButton();
-            btn_Sale = new CustomButton();
-            btn_Cat = new CustomButton();
-            btn_Dog = new CustomButton();
-            btn_Equipment = new CustomButton();
             groupBox4 = new GroupBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Post).BeginInit();
-            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -95,6 +87,7 @@
             btn_Search.TabIndex = 0;
             btn_Search.Text = "Search";
             btn_Search.UseVisualStyleBackColor = true;
+            btn_Search.Click += btn_Search_Click;
             // 
             // txt_Search
             // 
@@ -124,6 +117,7 @@
             btn_Report.TabIndex = 4;
             btn_Report.Text = "Report";
             btn_Report.UseVisualStyleBackColor = true;
+            btn_Report.Click += btn_Report_Click;
             // 
             // btn_Update
             // 
@@ -133,6 +127,7 @@
             btn_Update.TabIndex = 3;
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = true;
+            btn_Update.Click += btn_Update_Click;
             // 
             // btn_Delete
             // 
@@ -183,150 +178,11 @@
             dgv_Post.RowTemplate.Height = 29;
             dgv_Post.Size = new Size(835, 438);
             dgv_Post.TabIndex = 0;
-            dgv_Post.CellContentClick += dgv_Post_CellContentClick;
-            // 
-            // btn_CusPost
-            // 
-            btn_CusPost.BackColor = Color.MediumSlateBlue;
-            btn_CusPost.BackgroundColor = Color.MediumSlateBlue;
-            btn_CusPost.BorderColor = Color.PaleVioletRed;
-            btn_CusPost.BorderRadius = 20;
-            btn_CusPost.BorderSize = 0;
-            btn_CusPost.Cursor = Cursors.Hand;
-            btn_CusPost.FlatAppearance.BorderSize = 0;
-            btn_CusPost.FlatStyle = FlatStyle.Flat;
-            btn_CusPost.ForeColor = Color.White;
-            btn_CusPost.Location = new Point(10, 20);
-            btn_CusPost.Name = "btn_CusPost";
-            btn_CusPost.Size = new Size(142, 47);
-            btn_CusPost.TabIndex = 0;
-            btn_CusPost.Text = "Your Posts";
-            btn_CusPost.TextColor = Color.White;
-            btn_CusPost.UseVisualStyleBackColor = false;
-            // 
-            // btn_Exchanged
-            // 
-            btn_Exchanged.BackColor = Color.MediumSlateBlue;
-            btn_Exchanged.BackgroundColor = Color.MediumSlateBlue;
-            btn_Exchanged.BorderColor = Color.PaleVioletRed;
-            btn_Exchanged.BorderRadius = 20;
-            btn_Exchanged.BorderSize = 0;
-            btn_Exchanged.Cursor = Cursors.Hand;
-            btn_Exchanged.FlatAppearance.BorderSize = 0;
-            btn_Exchanged.FlatStyle = FlatStyle.Flat;
-            btn_Exchanged.ForeColor = Color.White;
-            btn_Exchanged.Location = new Point(170, 21);
-            btn_Exchanged.Name = "btn_Exchanged";
-            btn_Exchanged.Size = new Size(128, 46);
-            btn_Exchanged.TabIndex = 1;
-            btn_Exchanged.Text = "Exchanged";
-            btn_Exchanged.TextColor = Color.White;
-            btn_Exchanged.UseVisualStyleBackColor = false;
-            // 
-            // btn_Free
-            // 
-            btn_Free.BackColor = Color.Teal;
-            btn_Free.BackgroundColor = Color.Teal;
-            btn_Free.BorderColor = Color.PaleVioletRed;
-            btn_Free.BorderRadius = 20;
-            btn_Free.BorderSize = 0;
-            btn_Free.Cursor = Cursors.Hand;
-            btn_Free.FlatAppearance.BorderSize = 0;
-            btn_Free.FlatStyle = FlatStyle.Flat;
-            btn_Free.ForeColor = Color.White;
-            btn_Free.Location = new Point(619, 20);
-            btn_Free.Name = "btn_Free";
-            btn_Free.Size = new Size(132, 47);
-            btn_Free.TabIndex = 2;
-            btn_Free.Text = "For gift/For free";
-            btn_Free.TextColor = Color.White;
-            btn_Free.UseVisualStyleBackColor = false;
-            // 
-            // btn_Sale
-            // 
-            btn_Sale.BackColor = Color.Teal;
-            btn_Sale.BackgroundColor = Color.Teal;
-            btn_Sale.BorderColor = Color.PaleVioletRed;
-            btn_Sale.BorderRadius = 20;
-            btn_Sale.BorderSize = 0;
-            btn_Sale.Cursor = Cursors.Hand;
-            btn_Sale.FlatAppearance.BorderSize = 0;
-            btn_Sale.FlatStyle = FlatStyle.Flat;
-            btn_Sale.ForeColor = Color.White;
-            btn_Sale.Location = new Point(766, 20);
-            btn_Sale.Name = "btn_Sale";
-            btn_Sale.Size = new Size(79, 47);
-            btn_Sale.TabIndex = 3;
-            btn_Sale.Text = "Sale";
-            btn_Sale.TextColor = Color.White;
-            btn_Sale.UseVisualStyleBackColor = false;
-            // 
-            // btn_Cat
-            // 
-            btn_Cat.BackColor = Color.MediumVioletRed;
-            btn_Cat.BackgroundColor = Color.MediumVioletRed;
-            btn_Cat.BorderColor = Color.PaleVioletRed;
-            btn_Cat.BorderRadius = 20;
-            btn_Cat.BorderSize = 0;
-            btn_Cat.Cursor = Cursors.Hand;
-            btn_Cat.FlatAppearance.BorderSize = 0;
-            btn_Cat.FlatStyle = FlatStyle.Flat;
-            btn_Cat.ForeColor = Color.White;
-            btn_Cat.Location = new Point(319, 26);
-            btn_Cat.Name = "btn_Cat";
-            btn_Cat.Size = new Size(70, 36);
-            btn_Cat.TabIndex = 4;
-            btn_Cat.Text = "Cat";
-            btn_Cat.TextColor = Color.White;
-            btn_Cat.UseVisualStyleBackColor = false;
-            // 
-            // btn_Dog
-            // 
-            btn_Dog.BackColor = Color.MediumVioletRed;
-            btn_Dog.BackgroundColor = Color.MediumVioletRed;
-            btn_Dog.BorderColor = Color.PaleVioletRed;
-            btn_Dog.BorderRadius = 20;
-            btn_Dog.BorderSize = 0;
-            btn_Dog.Cursor = Cursors.Hand;
-            btn_Dog.FlatAppearance.BorderSize = 0;
-            btn_Dog.FlatStyle = FlatStyle.Flat;
-            btn_Dog.ForeColor = Color.White;
-            btn_Dog.Location = new Point(413, 26);
-            btn_Dog.Name = "btn_Dog";
-            btn_Dog.Size = new Size(65, 36);
-            btn_Dog.TabIndex = 5;
-            btn_Dog.Text = "Dog";
-            btn_Dog.TextColor = Color.White;
-            btn_Dog.UseVisualStyleBackColor = false;
-            // 
-            // btn_Equipment
-            // 
-            btn_Equipment.BackColor = Color.MediumVioletRed;
-            btn_Equipment.BackgroundColor = Color.MediumVioletRed;
-            btn_Equipment.BorderColor = Color.PaleVioletRed;
-            btn_Equipment.BorderRadius = 20;
-            btn_Equipment.BorderSize = 0;
-            btn_Equipment.Cursor = Cursors.Hand;
-            btn_Equipment.FlatAppearance.BorderSize = 0;
-            btn_Equipment.FlatStyle = FlatStyle.Flat;
-            btn_Equipment.ForeColor = Color.White;
-            btn_Equipment.Location = new Point(497, 26);
-            btn_Equipment.Name = "btn_Equipment";
-            btn_Equipment.Size = new Size(106, 36);
-            btn_Equipment.TabIndex = 6;
-            btn_Equipment.Text = "Equipment";
-            btn_Equipment.TextColor = Color.White;
-            btn_Equipment.UseVisualStyleBackColor = false;
+            dgv_Post.CellClick += dgv_Post_CellClick;
+            dgv_Post.CellContentClick += dgv_Post_CellClick;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(btn_Sale);
-            groupBox4.Controls.Add(btn_CusPost);
-            groupBox4.Controls.Add(btn_Free);
-            groupBox4.Controls.Add(btn_Equipment);
-            groupBox4.Controls.Add(btn_Exchanged);
-            groupBox4.Controls.Add(btn_Cat);
-            groupBox4.Controls.Add(btn_Dog);
             groupBox4.Location = new Point(102, 54);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(851, 77);
@@ -353,7 +209,6 @@
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgv_Post).EndInit();
-            groupBox4.ResumeLayout(false);
             ResumeLayout(false);
         }
 

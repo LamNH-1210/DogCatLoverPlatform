@@ -12,7 +12,7 @@ namespace DataAccess.DAO
 {
     public class PostDAO
     {
-        private static PostDAO instance;
+        private static PostDAO instance = null;
 
         // Singlaton UserDAO
         public static PostDAO Instance
@@ -159,6 +159,29 @@ namespace DataAccess.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public void UpdatePost(Post post)
+        {
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                var postupdate = dbContext.Posts.FirstOrDefault(u => u.PostId == post.PostId);
+                if (postupdate != null)
+                {
+                    postupdate.Content = post.Content;
+                    postupdate.Title = post.Title;
+                    postupdate.PostDate = post.PostDate;
+                    postupdate.Status = post.Status;
+                }
+                dbContext.Update(postupdate);
+                dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
     }
 
 }

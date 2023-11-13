@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            lb_ContentWarning = new Label();
+            lb_TitleWarning = new Label();
             cmb_Status = new ComboBox();
             txt_Content = new TextBox();
             label4 = new Label();
@@ -45,6 +47,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lb_ContentWarning);
+            groupBox1.Controls.Add(lb_TitleWarning);
             groupBox1.Controls.Add(cmb_Status);
             groupBox1.Controls.Add(txt_Content);
             groupBox1.Controls.Add(label4);
@@ -54,14 +58,36 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(7, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(781, 290);
+            groupBox1.Size = new Size(781, 320);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // lb_ContentWarning
+            // 
+            lb_ContentWarning.AutoSize = true;
+            lb_ContentWarning.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_ContentWarning.ForeColor = Color.Red;
+            lb_ContentWarning.Location = new Point(86, 238);
+            lb_ContentWarning.Name = "lb_ContentWarning";
+            lb_ContentWarning.Size = new Size(237, 23);
+            lb_ContentWarning.TabIndex = 7;
+            lb_ContentWarning.Text = "*Content must not be empty*";
+            // 
+            // lb_TitleWarning
+            // 
+            lb_TitleWarning.AutoSize = true;
+            lb_TitleWarning.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_TitleWarning.ForeColor = Color.Red;
+            lb_TitleWarning.Location = new Point(86, 78);
+            lb_TitleWarning.Name = "lb_TitleWarning";
+            lb_TitleWarning.Size = new Size(207, 23);
+            lb_TitleWarning.TabIndex = 6;
+            lb_TitleWarning.Text = "*Title must not be empty*";
             // 
             // cmb_Status
             // 
             cmb_Status.FormattingEnabled = true;
-            cmb_Status.Location = new Point(86, 234);
+            cmb_Status.Location = new Point(86, 273);
             cmb_Status.Name = "cmb_Status";
             cmb_Status.Size = new Size(137, 28);
             cmb_Status.TabIndex = 5;
@@ -69,7 +95,7 @@
             // txt_Content
             // 
             txt_Content.BorderStyle = BorderStyle.FixedSingle;
-            txt_Content.Location = new Point(86, 92);
+            txt_Content.Location = new Point(86, 113);
             txt_Content.Multiline = true;
             txt_Content.Name = "txt_Content";
             txt_Content.Size = new Size(677, 122);
@@ -78,7 +104,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 237);
+            label4.Location = new Point(18, 276);
             label4.Name = "label4";
             label4.Size = new Size(49, 20);
             label4.TabIndex = 3;
@@ -87,7 +113,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 94);
+            label3.Location = new Point(6, 113);
             label3.Name = "label3";
             label3.Size = new Size(61, 20);
             label3.TabIndex = 2;
@@ -123,7 +149,7 @@
             // 
             groupBox3.Controls.Add(btn_Cancel);
             groupBox3.Controls.Add(btn_Post);
-            groupBox3.Location = new Point(7, 296);
+            groupBox3.Location = new Point(7, 326);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(781, 97);
             groupBox3.TabIndex = 2;
@@ -171,7 +197,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 409);
+            ClientSize = new Size(800, 435);
             Controls.Add(groupBox3);
             Controls.Add(groupBox1);
             Name = "MemberCreatePostForm";
@@ -197,5 +223,7 @@
         private TextBox txt_Title;
         private CustomButton btn_Post;
         private CustomButton btn_Cancel;
+        private Label lb_ContentWarning;
+        private Label lb_TitleWarning;
     }
 }
