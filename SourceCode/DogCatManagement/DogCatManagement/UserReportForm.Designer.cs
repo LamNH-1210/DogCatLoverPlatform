@@ -37,14 +37,12 @@
             groupBox2 = new GroupBox();
             btn_Cancel = new Button();
             btn_SendReport = new Button();
-            rd_OtherReason = new RadioButton();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(rd_OtherReason);
             groupBox1.Controls.Add(lb_OtherEmpty);
             groupBox1.Controls.Add(txt_OtherReason);
             groupBox1.Controls.Add(cmb_Reasons);
@@ -133,17 +131,6 @@
             btn_SendReport.UseVisualStyleBackColor = true;
             btn_SendReport.Click += btn_SendReport_Click;
             // 
-            // rd_OtherReason
-            // 
-            rd_OtherReason.AutoSize = true;
-            rd_OtherReason.Location = new Point(87, 65);
-            rd_OtherReason.Name = "rd_OtherReason";
-            rd_OtherReason.Size = new Size(125, 24);
-            rd_OtherReason.TabIndex = 5;
-            rd_OtherReason.TabStop = true;
-            rd_OtherReason.Text = "Other Reasons";
-            rd_OtherReason.UseVisualStyleBackColor = true;
-            // 
             // UserReportForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -171,6 +158,5 @@
         private GroupBox groupBox2;
         private Button btn_Cancel;
         private Button btn_SendReport;
-        private RadioButton rd_OtherReason;
     }
 }

@@ -26,6 +26,7 @@ namespace Repository
         public void UpdatePost(Post post) => PostDAO.Instance.UpdatePost(post);
 
         public bool UpdatePostByAdmin(Post post) => PostDAO.Instance.UpdatePostByAdmin(post);
+        public List<Post> GetPostsByUserId(int userId) => PostDAO.Instance.GetPostsByUserId(userId);
 
 
     }

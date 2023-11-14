@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            btn_Menu = new Button();
+            btn_Logout = new Button();
+            btn_User = new Button();
             label1 = new Label();
             btn_Search = new Button();
             txt_Search = new TextBox();
@@ -39,41 +40,55 @@
             btn_Delete = new Button();
             btn_Close = new Button();
             btn_CreateNewPost = new Button();
-            groupBox3 = new GroupBox();
+            gb_PostsList = new GroupBox();
             dgv_Post = new DataGridView();
             groupBox4 = new GroupBox();
+            btn_YourPost = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            gb_PostsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Post).BeginInit();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btn_Menu);
+            groupBox1.Controls.Add(btn_Logout);
+            groupBox1.Controls.Add(btn_User);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btn_Search);
             groupBox1.Controls.Add(txt_Search);
             groupBox1.Location = new Point(6, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(947, 54);
+            groupBox1.Size = new Size(947, 53);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // btn_Menu
+            // btn_Logout
             // 
-            btn_Menu.Location = new Point(6, 16);
-            btn_Menu.Name = "btn_Menu";
-            btn_Menu.Size = new Size(80, 32);
-            btn_Menu.TabIndex = 2;
-            btn_Menu.Text = "Menu";
-            btn_Menu.UseVisualStyleBackColor = true;
+            btn_Logout.Location = new Point(853, 19);
+            btn_Logout.Name = "btn_Logout";
+            btn_Logout.Size = new Size(76, 29);
+            btn_Logout.TabIndex = 3;
+            btn_Logout.Text = "Log-out";
+            btn_Logout.UseVisualStyleBackColor = true;
+            btn_Logout.Click += btn_Logout_Click;
+            // 
+            // btn_User
+            // 
+            btn_User.Location = new Point(6, 15);
+            btn_User.Name = "btn_User";
+            btn_User.Size = new Size(80, 32);
+            btn_User.TabIndex = 2;
+            btn_User.Text = "User";
+            btn_User.UseVisualStyleBackColor = true;
+            btn_User.Click += btn_User_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.Fixed3D;
-            label1.Location = new Point(295, 21);
+            label1.Location = new Point(255, 21);
             label1.Name = "label1";
             label1.Size = new Size(172, 22);
             label1.TabIndex = 1;
@@ -81,9 +96,9 @@
             // 
             // btn_Search
             // 
-            btn_Search.Location = new Point(835, 16);
+            btn_Search.Location = new Point(784, 17);
             btn_Search.Name = "btn_Search";
-            btn_Search.Size = new Size(61, 36);
+            btn_Search.Size = new Size(61, 31);
             btn_Search.TabIndex = 0;
             btn_Search.Text = "Search";
             btn_Search.UseVisualStyleBackColor = true;
@@ -91,7 +106,8 @@
             // 
             // txt_Search
             // 
-            txt_Search.Location = new Point(610, 21);
+            txt_Search.BorderStyle = BorderStyle.FixedSingle;
+            txt_Search.Location = new Point(559, 21);
             txt_Search.Name = "txt_Search";
             txt_Search.Size = new Size(219, 27);
             txt_Search.TabIndex = 0;
@@ -103,9 +119,9 @@
             groupBox2.Controls.Add(btn_Delete);
             groupBox2.Controls.Add(btn_Close);
             groupBox2.Controls.Add(btn_CreateNewPost);
-            groupBox2.Location = new Point(6, 54);
+            groupBox2.Location = new Point(6, 53);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(130, 555);
+            groupBox2.Size = new Size(86, 555);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
@@ -141,7 +157,7 @@
             // 
             // btn_Close
             // 
-            btn_Close.Location = new Point(11, 232);
+            btn_Close.Location = new Point(10, 516);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(66, 33);
             btn_Close.TabIndex = 1;
@@ -151,7 +167,7 @@
             // 
             // btn_CreateNewPost
             // 
-            btn_CreateNewPost.Location = new Point(10, 26);
+            btn_CreateNewPost.Location = new Point(10, 27);
             btn_CreateNewPost.Name = "btn_CreateNewPost";
             btn_CreateNewPost.Size = new Size(66, 35);
             btn_CreateNewPost.TabIndex = 0;
@@ -159,36 +175,45 @@
             btn_CreateNewPost.UseVisualStyleBackColor = true;
             btn_CreateNewPost.Click += btn_CreateNewPost_Click;
             // 
-            // groupBox3
+            // gb_PostsList
             // 
-            groupBox3.Controls.Add(dgv_Post);
-            groupBox3.Location = new Point(103, 127);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(850, 482);
-            groupBox3.TabIndex = 1;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Post List";
+            gb_PostsList.Controls.Add(dgv_Post);
+            gb_PostsList.Location = new Point(103, 127);
+            gb_PostsList.Name = "gb_PostsList";
+            gb_PostsList.Size = new Size(850, 483);
+            gb_PostsList.TabIndex = 1;
+            gb_PostsList.TabStop = false;
+            gb_PostsList.Text = "Post List";
             // 
             // dgv_Post
             // 
             dgv_Post.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_Post.Location = new Point(25, 26);
+            dgv_Post.Location = new Point(21, 27);
             dgv_Post.Name = "dgv_Post";
             dgv_Post.RowHeadersWidth = 51;
             dgv_Post.RowTemplate.Height = 29;
-            dgv_Post.Size = new Size(835, 438);
+            dgv_Post.Size = new Size(811, 437);
             dgv_Post.TabIndex = 0;
             dgv_Post.CellClick += dgv_Post_CellClick;
-            dgv_Post.CellContentClick += dgv_Post_CellClick;
             // 
             // groupBox4
             // 
-            groupBox4.Location = new Point(102, 54);
+            groupBox4.Controls.Add(btn_YourPost);
+            groupBox4.Location = new Point(103, 53);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(851, 77);
+            groupBox4.Size = new Size(850, 68);
             groupBox4.TabIndex = 2;
             groupBox4.TabStop = false;
-            groupBox4.Text = "Filter";
+            // 
+            // btn_YourPost
+            // 
+            btn_YourPost.Location = new Point(21, 26);
+            btn_YourPost.Name = "btn_YourPost";
+            btn_YourPost.Size = new Size(94, 29);
+            btn_YourPost.TabIndex = 0;
+            btn_YourPost.Text = "Your Post";
+            btn_YourPost.UseVisualStyleBackColor = true;
+            btn_YourPost.Click += btn_YourPost_Click;
             // 
             // CustomerHomePage
             // 
@@ -196,7 +221,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(965, 621);
             Controls.Add(groupBox4);
-            Controls.Add(groupBox3);
+            Controls.Add(gb_PostsList);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Margin = new Padding(3, 4, 3, 4);
@@ -207,20 +232,21 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
+            gb_PostsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgv_Post).EndInit();
+            groupBox4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBox1;
-        private Button btn_Menu;
+        private Button btn_User;
         private Label label1;
         private Button btn_Search;
         private TextBox txt_Search;
         private GroupBox groupBox2;
-        private GroupBox groupBox3;
+        private GroupBox gb_PostsList;
         private DataGridView dgv_Post;
         private Button btn_Delete;
         private Button btn_Close;
@@ -233,7 +259,9 @@
         private CustomButton btn_Cat;
         private CustomButton btn_CusPost;
         private CustomButton btn_Exchanged;
-        private GroupBox groupBox4;
         private Button btn_Report;
+        private Button btn_Logout;
+        private GroupBox groupBox4;
+        private Button btn_YourPost;
     }
 }

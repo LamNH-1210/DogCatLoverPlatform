@@ -10,8 +10,10 @@ namespace Repository
     public interface IReportRepository
     {
         List<Report> GetAllReportList();
-        Report GetReportByPostID(int id);
+        Report GetReportByReportID(int id);
         void ReportPost(Report report);
         void AddReport(Report report);
+        void UpdateReport(Report report);
+        List<Report> GetReportsByUserID(int userID);
     }
 }

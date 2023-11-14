@@ -12,7 +12,6 @@ namespace DataAccess.DAO
     public class UserDAO
     {
         private static UserDAO instance;
-
         // Singlaton UserDAO
         public static UserDAO Instance
         {
@@ -116,14 +115,17 @@ namespace DataAccess.DAO
         // Delete User 
         public bool DeleteUser(UserDTO userDTO)
         {
-            try {   
+            try {  
                 var dbContex = new DogCatLoverPlatformDBContext();
                 var user = dbContex.Users.FirstOrDefault(u => u.UserId == userDTO.UserId);
                 if(user != null)
                 {
-                    user.RoleId = 3;
+                   if(user.RoleId != 3)
+                    {
+                         user.RoleId = 3;
                     dbContex.Update(user);
-                    dbContex.SaveChanges();    
+                    dbContex.SaveChanges();   
+                    } 
                 }
                 return true;
             }
@@ -131,6 +133,27 @@ namespace DataAccess.DAO
             {
                 throw new Exception(ex.Message);
                 return false;
+            }
+        }
+        public void UpdateUserByCustomer(User user)
+        {
+            try
+            {
+                var dbContex = new DogCatLoverPlatformDBContext();
+                var userupdate = dbContex.Users.FirstOrDefault(u => u.UserId == user.UserId);
+                if (userupdate != null)
+                {
+                    userupdate.UserName = user.UserName;
+                    userupdate.Password = user.Password;
+                    userupdate.Email = user.Email;
+                }
+                dbContex.Update(userupdate);
+                dbContex.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

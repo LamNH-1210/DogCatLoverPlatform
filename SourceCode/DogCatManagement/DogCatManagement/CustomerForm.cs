@@ -70,9 +70,9 @@ namespace DogCatManagement
             }
             else
             {
-                user = GetUserFromForm();
-                _userRepository.AddNewUser(user);
-                MessageBox.Show("Bạn đã thêm thành công người dùng","Thông báo",MessageBoxButtons.OK);
+                     user = GetUserFromForm();          
+                    _userRepository.AddNewUser(user);
+                    MessageBox.Show("Bạn đã thêm thành công người dùng", "Thông báo", MessageBoxButtons.OK); 
             }
         }
 
@@ -104,17 +104,59 @@ namespace DogCatManagement
 
         // Update User
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
-        {
-            UserDTO newuser = GetUserDTOFromForm();
-            if (_userRepository.UpdateUser(newuser))
+        {   
+
+          
+            if (checkNullEmplty())
             {
-                MessageBox.Show("Bạn đã cập nhật thành công user rồi nhé !", "Thông báo", MessageBoxButtons.OK);
+                UserDTO newuser = GetUserDTOFromForm();
+                if (newuser.UserId != 0)
+                {
+                    if (_userRepository.UpdateUser(newuser))
+                    {
+                        MessageBox.Show("Bạn đã cập nhật thành công user rồi nhé !", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể tìm thấy user để cập nhật");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hiện tại không thể tìm thấy được id của người dùng, vui lồng kiểm tra lại!!");
+                }
             }
             else
             {
-                MessageBox.Show("Không thể tìm thấy user để cập nhật");
+                MessageBox.Show("Vui lòng điền đầy đủ trước khi update");
             }
             
+        }
+
+
+        // check null
+        private bool checkNullEmplty()
+        {
+            if (string.IsNullOrEmpty(txtEmailCustomer.Text)||string.IsNullOrEmpty(txtFullNameCustomer.Text)|| string.IsNullOrEmpty(txtPasswordCustomer.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        // check id 
+        private bool checkDuplicateID(int id)
+        {
+            User user = null;
+            user = _userRepository.getUserByID(id);
+            if (user != null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

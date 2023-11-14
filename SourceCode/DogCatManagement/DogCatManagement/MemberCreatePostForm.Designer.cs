@@ -31,9 +31,7 @@
             groupBox1 = new GroupBox();
             lb_ContentWarning = new Label();
             lb_TitleWarning = new Label();
-            cmb_Status = new ComboBox();
             txt_Content = new TextBox();
-            label4 = new Label();
             label3 = new Label();
             txt_Title = new TextBox();
             label2 = new Label();
@@ -49,16 +47,14 @@
             // 
             groupBox1.Controls.Add(lb_ContentWarning);
             groupBox1.Controls.Add(lb_TitleWarning);
-            groupBox1.Controls.Add(cmb_Status);
             groupBox1.Controls.Add(txt_Content);
-            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txt_Title);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(7, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(781, 320);
+            groupBox1.Size = new Size(781, 280);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -84,14 +80,6 @@
             lb_TitleWarning.TabIndex = 6;
             lb_TitleWarning.Text = "*Title must not be empty*";
             // 
-            // cmb_Status
-            // 
-            cmb_Status.FormattingEnabled = true;
-            cmb_Status.Location = new Point(86, 273);
-            cmb_Status.Name = "cmb_Status";
-            cmb_Status.Size = new Size(137, 28);
-            cmb_Status.TabIndex = 5;
-            // 
             // txt_Content
             // 
             txt_Content.BorderStyle = BorderStyle.FixedSingle;
@@ -100,15 +88,6 @@
             txt_Content.Name = "txt_Content";
             txt_Content.Size = new Size(677, 122);
             txt_Content.TabIndex = 3;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(18, 276);
-            label4.Name = "label4";
-            label4.Size = new Size(49, 20);
-            label4.TabIndex = 3;
-            label4.Text = "Status";
             // 
             // label3
             // 
@@ -149,7 +128,7 @@
             // 
             groupBox3.Controls.Add(btn_Cancel);
             groupBox3.Controls.Add(btn_Post);
-            groupBox3.Location = new Point(7, 326);
+            groupBox3.Location = new Point(7, 286);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(781, 97);
             groupBox3.TabIndex = 2;

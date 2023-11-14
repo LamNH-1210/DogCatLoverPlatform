@@ -28,283 +28,323 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbCustomer = new System.Windows.Forms.GroupBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.gbPost = new System.Windows.Forms.GroupBox();
-            this.btnPostDelete = new System.Windows.Forms.Button();
-            this.btnPostUpdate = new System.Windows.Forms.Button();
-            this.btnPostAdd = new System.Windows.Forms.Button();
-            this.gbReport = new System.Windows.Forms.GroupBox();
-            this.btnReportDelete = new System.Windows.Forms.Button();
-            this.btn = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbbDataAdmin = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtSearchUser = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbWelcome = new System.Windows.Forms.Label();
-            this.dgvData = new System.Windows.Forms.DataGridView();
-            this.txtSearchPost = new System.Windows.Forms.TextBox();
-            this.txtReportSearch = new System.Windows.Forms.TextBox();
-            this.gbCustomer.SuspendLayout();
-            this.gbPost.SuspendLayout();
-            this.gbReport.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
-            this.SuspendLayout();
+            gbCustomer = new GroupBox();
+            btnDelete = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
+            gbPost = new GroupBox();
+            btnPostDelete = new Button();
+            btnPostUpdate = new Button();
+            btnPostAdd = new Button();
+            gbReport = new GroupBox();
+            btn = new Button();
+            btnLogout = new Button();
+            groupBox3 = new GroupBox();
+            cbbDataAdmin = new ComboBox();
+            label2 = new Label();
+            groupBox4 = new GroupBox();
+            txtReportSearch = new TextBox();
+            txtSearchPost = new TextBox();
+            txtSearchUser = new TextBox();
+            label3 = new Label();
+            lbWelcome = new Label();
+            dgvData = new DataGridView();
+            cbbFilterPost = new ComboBox();
+            cbbFilterUser = new ComboBox();
+            gbCustomer.SuspendLayout();
+            gbPost.SuspendLayout();
+            gbReport.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvData).BeginInit();
+            SuspendLayout();
             // 
             // gbCustomer
             // 
-            this.gbCustomer.Controls.Add(this.btnDelete);
-            this.gbCustomer.Controls.Add(this.btnUpdate);
-            this.gbCustomer.Controls.Add(this.btnAdd);
-            this.gbCustomer.Location = new System.Drawing.Point(674, 134);
-            this.gbCustomer.Name = "gbCustomer";
-            this.gbCustomer.Size = new System.Drawing.Size(126, 181);
-            this.gbCustomer.TabIndex = 1;
-            this.gbCustomer.TabStop = false;
+            gbCustomer.Controls.Add(btnDelete);
+            gbCustomer.Controls.Add(btnUpdate);
+            gbCustomer.Controls.Add(btnAdd);
+            gbCustomer.Location = new Point(826, 250);
+            gbCustomer.Margin = new Padding(3, 4, 3, 4);
+            gbCustomer.Name = "gbCustomer";
+            gbCustomer.Padding = new Padding(3, 4, 3, 4);
+            gbCustomer.Size = new Size(144, 241);
+            gbCustomer.TabIndex = 1;
+            gbCustomer.TabStop = false;
+            gbCustomer.Enter += gbCustomer_Enter;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(0, 120);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(126, 43);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.Location = new Point(6, 160);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(132, 61);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Khóa/Mở Khóa";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(0, 71);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(126, 43);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            btnUpdate.Location = new Point(6, 95);
+            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(132, 57);
+            btnUpdate.TabIndex = 1;
+            btnUpdate.Text = "Sửa";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(0, 22);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(126, 43);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.Location = new Point(6, 29);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(132, 57);
+            btnAdd.TabIndex = 0;
+            btnAdd.Text = "Thêm";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // gbPost
             // 
-            this.gbPost.Controls.Add(this.btnPostDelete);
-            this.gbPost.Controls.Add(this.btnPostUpdate);
-            this.gbPost.Controls.Add(this.btnPostAdd);
-            this.gbPost.Location = new System.Drawing.Point(674, 180);
-            this.gbPost.Name = "gbPost";
-            this.gbPost.Size = new System.Drawing.Size(126, 250);
-            this.gbPost.TabIndex = 4;
-            this.gbPost.TabStop = false;
-            this.gbPost.Visible = false;
+            gbPost.Controls.Add(btnPostDelete);
+            gbPost.Controls.Add(btnPostUpdate);
+            gbPost.Controls.Add(btnPostAdd);
+            gbPost.Location = new Point(826, 251);
+            gbPost.Margin = new Padding(3, 4, 3, 4);
+            gbPost.Name = "gbPost";
+            gbPost.Padding = new Padding(3, 4, 3, 4);
+            gbPost.Size = new Size(144, 240);
+            gbPost.TabIndex = 4;
+            gbPost.TabStop = false;
+            gbPost.Visible = false;
             // 
             // btnPostDelete
             // 
-            this.btnPostDelete.Location = new System.Drawing.Point(0, 113);
-            this.btnPostDelete.Name = "btnPostDelete";
-            this.btnPostDelete.Size = new System.Drawing.Size(126, 43);
-            this.btnPostDelete.TabIndex = 2;
-            this.btnPostDelete.Text = "Xóa";
-            this.btnPostDelete.UseVisualStyleBackColor = true;
-            this.btnPostDelete.Click += new System.EventHandler(this.btnPostDelete_Click);
+            btnPostDelete.Location = new Point(6, 151);
+            btnPostDelete.Margin = new Padding(3, 4, 3, 4);
+            btnPostDelete.Name = "btnPostDelete";
+            btnPostDelete.Size = new Size(126, 56);
+            btnPostDelete.TabIndex = 2;
+            btnPostDelete.Text = "Xóa";
+            btnPostDelete.UseVisualStyleBackColor = true;
+            btnPostDelete.Click += btnPostDelete_Click;
             // 
             // btnPostUpdate
             // 
-            this.btnPostUpdate.Location = new System.Drawing.Point(0, 64);
-            this.btnPostUpdate.Name = "btnPostUpdate";
-            this.btnPostUpdate.Size = new System.Drawing.Size(126, 43);
-            this.btnPostUpdate.TabIndex = 1;
-            this.btnPostUpdate.Text = "Yêu cầu";
-            this.btnPostUpdate.UseVisualStyleBackColor = true;
-            this.btnPostUpdate.Click += new System.EventHandler(this.btnPostUpdate_Click);
+            btnPostUpdate.Location = new Point(6, 85);
+            btnPostUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnPostUpdate.Name = "btnPostUpdate";
+            btnPostUpdate.Size = new Size(126, 58);
+            btnPostUpdate.TabIndex = 1;
+            btnPostUpdate.Text = "Yêu cầu";
+            btnPostUpdate.UseVisualStyleBackColor = true;
+            btnPostUpdate.Click += btnPostUpdate_Click;
             // 
             // btnPostAdd
             // 
-            this.btnPostAdd.Location = new System.Drawing.Point(0, 15);
-            this.btnPostAdd.Name = "btnPostAdd";
-            this.btnPostAdd.Size = new System.Drawing.Size(126, 43);
-            this.btnPostAdd.TabIndex = 0;
-            this.btnPostAdd.Text = "Thêm";
-            this.btnPostAdd.UseVisualStyleBackColor = true;
-            this.btnPostAdd.Click += new System.EventHandler(this.btnPostAdd_Click);
+            btnPostAdd.Location = new Point(6, 20);
+            btnPostAdd.Margin = new Padding(3, 4, 3, 4);
+            btnPostAdd.Name = "btnPostAdd";
+            btnPostAdd.Size = new Size(126, 54);
+            btnPostAdd.TabIndex = 0;
+            btnPostAdd.Text = "Thêm";
+            btnPostAdd.UseVisualStyleBackColor = true;
+            btnPostAdd.Click += btnPostAdd_Click;
             // 
             // gbReport
             // 
-            this.gbReport.Controls.Add(this.btnReportDelete);
-            this.gbReport.Controls.Add(this.btn);
-            this.gbReport.Location = new System.Drawing.Point(674, 134);
-            this.gbReport.Name = "gbReport";
-            this.gbReport.Size = new System.Drawing.Size(126, 250);
-            this.gbReport.TabIndex = 5;
-            this.gbReport.TabStop = false;
-            this.gbReport.Visible = false;
-            // 
-            // btnReportDelete
-            // 
-            this.btnReportDelete.Location = new System.Drawing.Point(0, 64);
-            this.btnReportDelete.Name = "btnReportDelete";
-            this.btnReportDelete.Size = new System.Drawing.Size(126, 43);
-            this.btnReportDelete.TabIndex = 2;
-            this.btnReportDelete.Text = "Xóa";
-            this.btnReportDelete.UseVisualStyleBackColor = true;
-            this.btnReportDelete.Click += new System.EventHandler(this.btnReportDelete_Click);
+            gbReport.Controls.Add(btn);
+            gbReport.Location = new Point(826, 562);
+            gbReport.Margin = new Padding(3, 4, 3, 4);
+            gbReport.Name = "gbReport";
+            gbReport.Padding = new Padding(3, 4, 3, 4);
+            gbReport.Size = new Size(144, 157);
+            gbReport.TabIndex = 5;
+            gbReport.TabStop = false;
+            gbReport.Visible = false;
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(0, 15);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(126, 43);
-            this.btn.TabIndex = 0;
-            this.btn.Text = "Xem chi tiết";
-            this.btn.UseVisualStyleBackColor = true;
-            this.btn.Click += new System.EventHandler(this.btn_Click);
+            btn.Location = new Point(6, 61);
+            btn.Margin = new Padding(3, 4, 3, 4);
+            btn.Name = "btn";
+            btn.Size = new Size(132, 57);
+            btn.TabIndex = 0;
+            btn.Text = "Xem chi tiết";
+            btn.UseVisualStyleBackColor = true;
+            btn.Click += btn_Click;
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(674, 446);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(126, 43);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.Text = "Đăng xuất";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            btnLogout.Location = new Point(826, 727);
+            btnLogout.Margin = new Padding(3, 4, 3, 4);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(144, 57);
+            btnLogout.TabIndex = 3;
+            btnLogout.Text = "Đăng xuất";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.cbbDataAdmin);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(12, 53);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(238, 65);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
+            groupBox3.Controls.Add(cbbDataAdmin);
+            groupBox3.Controls.Add(label2);
+            groupBox3.Location = new Point(12, 56);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(402, 87);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
             // 
             // cbbDataAdmin
             // 
-            this.cbbDataAdmin.FormattingEnabled = true;
-            this.cbbDataAdmin.Location = new System.Drawing.Point(56, 28);
-            this.cbbDataAdmin.Name = "cbbDataAdmin";
-            this.cbbDataAdmin.Size = new System.Drawing.Size(152, 23);
-            this.cbbDataAdmin.TabIndex = 6;
-            this.cbbDataAdmin.SelectedIndexChanged += new System.EventHandler(this.cbbDataAdmin_SelectedIndexChanged);
+            cbbDataAdmin.FormattingEnabled = true;
+            cbbDataAdmin.Location = new Point(78, 37);
+            cbbDataAdmin.Margin = new Padding(3, 4, 3, 4);
+            cbbDataAdmin.Name = "cbbDataAdmin";
+            cbbDataAdmin.Size = new Size(173, 28);
+            cbbDataAdmin.TabIndex = 6;
+            cbbDataAdmin.SelectedIndexChanged += cbbDataAdmin_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Dữ liệu";
+            label2.AutoSize = true;
+            label2.Location = new Point(7, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Dữ liệu";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.txtReportSearch);
-            this.groupBox4.Controls.Add(this.txtSearchPost);
-            this.groupBox4.Controls.Add(this.txtSearchUser);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(316, 53);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(352, 65);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            // 
-            // txtSearchUser
-            // 
-            this.txtSearchUser.Location = new System.Drawing.Point(77, 26);
-            this.txtSearchUser.Name = "txtSearchUser";
-            this.txtSearchUser.Size = new System.Drawing.Size(269, 23);
-            this.txtSearchUser.TabIndex = 1;
-            this.txtSearchUser.TextChanged += new System.EventHandler(this.txtSearchAdmin_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tìm kiếm";
-            // 
-            // lbWelcome
-            // 
-            this.lbWelcome.AutoSize = true;
-            this.lbWelcome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbWelcome.Location = new System.Drawing.Point(12, 25);
-            this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(162, 25);
-            this.lbWelcome.TabIndex = 4;
-            this.lbWelcome.Text = "Welcome, Admin";
-            this.lbWelcome.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // dgvData
-            // 
-            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(12, 134);
-            this.dgvData.Name = "dgvData";
-            this.dgvData.RowTemplate.Height = 25;
-            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(656, 355);
-            this.dgvData.TabIndex = 5;
-            // 
-            // txtSearchPost
-            // 
-            this.txtSearchPost.Location = new System.Drawing.Point(77, 26);
-            this.txtSearchPost.Name = "txtSearchPost";
-            this.txtSearchPost.Size = new System.Drawing.Size(269, 23);
-            this.txtSearchPost.TabIndex = 2;
-            this.txtSearchPost.Visible = false;
-            this.txtSearchPost.TextChanged += new System.EventHandler(this.txtSearchPost_TextChanged);
+            groupBox4.Controls.Add(txtReportSearch);
+            groupBox4.Controls.Add(txtSearchPost);
+            groupBox4.Controls.Add(txtSearchUser);
+            groupBox4.Controls.Add(label3);
+            groupBox4.Location = new Point(12, 151);
+            groupBox4.Margin = new Padding(3, 4, 3, 4);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new Padding(3, 4, 3, 4);
+            groupBox4.Size = new Size(402, 87);
+            groupBox4.TabIndex = 3;
+            groupBox4.TabStop = false;
             // 
             // txtReportSearch
             // 
-            this.txtReportSearch.Location = new System.Drawing.Point(77, 26);
-            this.txtReportSearch.Name = "txtReportSearch";
-            this.txtReportSearch.Size = new System.Drawing.Size(269, 23);
-            this.txtReportSearch.TabIndex = 3;
-            this.txtReportSearch.Visible = false;
-            this.txtReportSearch.TextChanged += new System.EventHandler(this.txtReportSearch_TextChanged);
+            txtReportSearch.BorderStyle = BorderStyle.FixedSingle;
+            txtReportSearch.Location = new Point(83, 39);
+            txtReportSearch.Margin = new Padding(3, 4, 3, 4);
+            txtReportSearch.Name = "txtReportSearch";
+            txtReportSearch.Size = new Size(307, 27);
+            txtReportSearch.TabIndex = 3;
+            txtReportSearch.Visible = false;
+            txtReportSearch.TextChanged += txtReportSearch_TextChanged;
+            // 
+            // txtSearchPost
+            // 
+            txtSearchPost.Location = new Point(78, 39);
+            txtSearchPost.Margin = new Padding(3, 4, 3, 4);
+            txtSearchPost.Name = "txtSearchPost";
+            txtSearchPost.Size = new Size(307, 27);
+            txtSearchPost.TabIndex = 2;
+            txtSearchPost.Visible = false;
+            txtSearchPost.TextChanged += txtSearchPost_TextChanged;
+            // 
+            // txtSearchUser
+            // 
+            txtSearchUser.Location = new Point(78, 39);
+            txtSearchUser.Margin = new Padding(3, 4, 3, 4);
+            txtSearchUser.Name = "txtSearchUser";
+            txtSearchUser.Size = new Size(307, 27);
+            txtSearchUser.TabIndex = 1;
+            txtSearchUser.TextChanged += txtSearchAdmin_TextChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(7, 44);
+            label3.Name = "label3";
+            label3.Size = new Size(70, 20);
+            label3.TabIndex = 0;
+            label3.Text = "Tìm kiếm";
+            // 
+            // lbWelcome
+            // 
+            lbWelcome.AutoSize = true;
+            lbWelcome.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lbWelcome.Location = new Point(7, 20);
+            lbWelcome.Name = "lbWelcome";
+            lbWelcome.Size = new Size(209, 32);
+            lbWelcome.TabIndex = 4;
+            lbWelcome.Text = "Welcome, Admin";
+            lbWelcome.Click += label1_Click;
+            // 
+            // dgvData
+            // 
+            dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvData.Location = new Point(7, 261);
+            dgvData.Margin = new Padding(3, 4, 3, 4);
+            dgvData.Name = "dgvData";
+            dgvData.RowHeadersWidth = 51;
+            dgvData.RowTemplate.Height = 25;
+            dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvData.Size = new Size(811, 523);
+            dgvData.TabIndex = 5;
+            dgvData.CellFormatting += dgvData_CellFormatting;
+            // 
+            // cbbFilterPost
+            // 
+            cbbFilterPost.FormattingEnabled = true;
+            cbbFilterPost.Location = new Point(570, 210);
+            cbbFilterPost.Margin = new Padding(3, 4, 3, 4);
+            cbbFilterPost.Name = "cbbFilterPost";
+            cbbFilterPost.Size = new Size(186, 28);
+            cbbFilterPost.TabIndex = 6;
+            cbbFilterPost.SelectedIndexChanged += cbbFilterPost_SelectedIndexChanged;
+            // 
+            // cbbFilterUser
+            // 
+            cbbFilterUser.FormattingEnabled = true;
+            cbbFilterUser.Location = new Point(571, 210);
+            cbbFilterUser.Margin = new Padding(3, 4, 3, 4);
+            cbbFilterUser.Name = "cbbFilterUser";
+            cbbFilterUser.Size = new Size(186, 28);
+            cbbFilterUser.TabIndex = 7;
+            cbbFilterUser.SelectedIndexChanged += cbbFilterUser_SelectedIndexChanged;
             // 
             // AdminHomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 501);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.gbPost);
-            this.Controls.Add(this.gbReport);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.lbWelcome);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.gbCustomer);
-            this.Name = "AdminHomePage";
-            this.Text = "AdminHomePage";
-            this.Load += new System.EventHandler(this.AdminHomePage_Load);
-            this.gbCustomer.ResumeLayout(false);
-            this.gbPost.ResumeLayout(false);
-            this.gbReport.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(982, 807);
+            Controls.Add(cbbFilterUser);
+            Controls.Add(cbbFilterPost);
+            Controls.Add(groupBox4);
+            Controls.Add(gbPost);
+            Controls.Add(dgvData);
+            Controls.Add(gbReport);
+            Controls.Add(btnLogout);
+            Controls.Add(lbWelcome);
+            Controls.Add(groupBox3);
+            Controls.Add(gbCustomer);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "AdminHomePage";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "AdminHomePage";
+            Load += AdminHomePage_Load;
+            gbCustomer.ResumeLayout(false);
+            gbPost.ResumeLayout(false);
+            gbReport.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvData).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -326,11 +366,12 @@
         private Button btnPostUpdate;
         private Button btnPostAdd;
         private GroupBox gbReport;
-        private Button btnReportDelete;
         private Button btn;
         private DataGridView dgvData;
         private Label lbWelcome;
         private TextBox txtSearchPost;
         private TextBox txtReportSearch;
+        private ComboBox cbbFilterPost;
+        private ComboBox cbbFilterUser;
     }
 }

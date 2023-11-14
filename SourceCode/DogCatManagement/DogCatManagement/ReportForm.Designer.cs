@@ -80,6 +80,7 @@
             this.txtReportPostContent.Location = new System.Drawing.Point(380, 61);
             this.txtReportPostContent.Multiline = true;
             this.txtReportPostContent.Name = "txtReportPostContent";
+            this.txtReportPostContent.ReadOnly = true;
             this.txtReportPostContent.Size = new System.Drawing.Size(219, 181);
             this.txtReportPostContent.TabIndex = 9;
             // 
@@ -97,6 +98,7 @@
             // 
             this.txtPostReportTitle.Location = new System.Drawing.Point(134, 219);
             this.txtPostReportTitle.Name = "txtPostReportTitle";
+            this.txtPostReportTitle.ReadOnly = true;
             this.txtPostReportTitle.Size = new System.Drawing.Size(228, 23);
             this.txtPostReportTitle.TabIndex = 7;
             // 
@@ -105,6 +107,7 @@
             this.txtResonreport.Location = new System.Drawing.Point(134, 61);
             this.txtResonreport.Multiline = true;
             this.txtResonreport.Name = "txtResonreport";
+            this.txtResonreport.ReadOnly = true;
             this.txtResonreport.Size = new System.Drawing.Size(228, 95);
             this.txtResonreport.TabIndex = 6;
             // 
@@ -112,11 +115,13 @@
             // 
             this.txtUserReport.Location = new System.Drawing.Point(134, 22);
             this.txtUserReport.Name = "txtUserReport";
+            this.txtUserReport.ReadOnly = true;
             this.txtUserReport.Size = new System.Drawing.Size(228, 23);
             this.txtUserReport.TabIndex = 5;
             // 
             // dtReport
             // 
+            this.dtReport.Enabled = false;
             this.dtReport.Location = new System.Drawing.Point(134, 174);
             this.dtReport.Name = "dtReport";
             this.dtReport.Size = new System.Drawing.Size(228, 23);

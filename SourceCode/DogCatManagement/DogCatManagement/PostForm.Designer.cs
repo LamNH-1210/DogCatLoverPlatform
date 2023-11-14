@@ -74,6 +74,7 @@
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(121, 23);
             this.cbbStatus.TabIndex = 9;
+            this.cbbStatus.SelectedIndexChanged += new System.EventHandler(this.cbbStatus_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -89,6 +90,7 @@
             // 
             this.txtUser.Location = new System.Drawing.Point(111, 272);
             this.txtUser.Name = "txtUser";
+            this.txtUser.ReadOnly = true;
             this.txtUser.Size = new System.Drawing.Size(339, 23);
             this.txtUser.TabIndex = 7;
             // 

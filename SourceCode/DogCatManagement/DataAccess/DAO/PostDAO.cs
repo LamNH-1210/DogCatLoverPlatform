@@ -181,6 +181,20 @@ namespace DataAccess.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<Post> GetPostsByUserId(int userId)
+        {
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                return dbContext.Posts.Where(p => p.UserId == userId).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         
     }
 

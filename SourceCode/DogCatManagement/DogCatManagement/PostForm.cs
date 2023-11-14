@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using User = DataAccess.Models.User;
 
 namespace DogCatManagement
@@ -36,6 +37,7 @@ namespace DogCatManagement
             combobox.Add("Published", "Published");
             combobox.Add("Rejected", "Rejected");
             cbbStatus.DataSource = new BindingSource(combobox, null);
+            cbbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbStatus.DisplayMember = "Value";
             cbbStatus.ValueMember = "Key";
         }
@@ -108,6 +110,11 @@ namespace DogCatManagement
             AdminHomePage form = new AdminHomePage(_userSession);
             this.Hide();
             form.Show();
+        }
+
+        private void cbbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

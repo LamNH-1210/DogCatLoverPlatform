@@ -54,9 +54,9 @@ namespace DogCatManagement
             try
             {
                 Report new_Report = new Report();
-                
                 new_Report.PostId = _post.PostId;
                 new_Report.UserId = _userSession.UserId;
+                new_Report.ReportDate = DateTime.Now;
                 if (cmb_Reasons.SelectedItem != null)
                 {
                     if (!cmb_Reasons.SelectedItem.Equals("Others"))
@@ -75,8 +75,7 @@ namespace DogCatManagement
                     reportRepository.AddReport(new_Report);
                     MessageBox.Show("Report successful!");
                     this.Hide();
-                    CustomerHomePage customerHomePage = new CustomerHomePage(_userSession);
-                    customerHomePage.Show();
+                    _homePage.Show();
                 }
             }
             catch (Exception ex)
@@ -98,8 +97,7 @@ namespace DogCatManagement
 
             lb_OtherEmpty.Visible = false;
         }
-        }
     }
+}
 
-               
-                
+

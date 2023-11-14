@@ -17,5 +17,6 @@ namespace Repository
         bool DeleteUser(UserDTO user);
         bool UpdateUser(UserDTO user);
         User getUserByID(int id);
+        void UpdateUserByCustomer(User user);
     }
 }

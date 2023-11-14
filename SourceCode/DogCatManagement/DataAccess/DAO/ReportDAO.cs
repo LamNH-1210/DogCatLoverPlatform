@@ -53,13 +53,13 @@ namespace DataAccess.DAO
             }
         }
 
-        public Report GetReportByPostID(int postId)
+        public Report GetReportByReportID(int reportID)
         {
 
             try
             {
                 var dbContext = new DogCatLoverPlatformDBContext();
-                return dbContext.Reports.FirstOrDefault(m => m.PostId == postId);
+                return dbContext.Reports.FirstOrDefault(m => m.ReportId == reportID);
 
             }
             catch (Exception ex)
@@ -70,11 +70,20 @@ namespace DataAccess.DAO
 
         public void UpdateReport(Report report)
         {
-            var dbContent = new DogCatLoverPlatformDBContext();
-            Report existingReport = GetReportByPostID(report.ReportId);
 
-            dbContent.Entry(existingReport).State = EntityState.Modified;
-            dbContent.SaveChanges();
+                var dbContent = new DogCatLoverPlatformDBContext();
+                Report existingReport = GetReportByReportID(report.ReportId);
+
+                if (existingReport != null)
+                {
+                    // Update properties of existingReport with values from report parameter
+                    existingReport.ReportId = report.ReportId;
+                    // Update other properties as needed
+
+                    dbContent.Entry(existingReport).State = EntityState.Modified;
+                    dbContent.SaveChanges();
+                }
+            
         }
 
 
@@ -83,13 +92,23 @@ namespace DataAccess.DAO
             try
             {
                 var dbContext = new DogCatLoverPlatformDBContext();
-                Report existingReport = GetReportByPostID((int)report.PostId);
+                dbContext.Add(report);
+                dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
-                if (existingReport == null)
-                {
-                    // If the report doesn't exist, add it to the database
-                    ReportPost(report);
-                }
+        public List<Report> GetReportsByUserID(int userID)
+        {
+
+            try
+            {
+                var dbContext = new DogCatLoverPlatformDBContext();
+                return dbContext.Reports.Where(p => p.UserId == userID).ToList();
+
             }
             catch (Exception ex)
             {

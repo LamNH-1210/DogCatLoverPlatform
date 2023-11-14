@@ -18,5 +18,7 @@ namespace Repository
         List<Post> GetPosts();
         void DeletePostByCustomer(int postid);
         void UpdatePost(Post post);
+        List<Post> GetPostsByUserId(int userId);
+
     }
 }

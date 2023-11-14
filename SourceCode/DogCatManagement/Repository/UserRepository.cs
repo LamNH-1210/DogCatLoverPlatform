@@ -22,5 +22,6 @@ namespace Repository
         public User getUserByID(int id) => UserDAO.Instance.getUserByID(id);
 
         public bool UpdateUser(UserDTO user) => UserDAO.Instance.UpdateUser(user);
+        public void UpdateUserByCustomer(User user) => UserDAO.Instance.UpdateUserByCustomer(user);
     }
 }

@@ -66,6 +66,7 @@ namespace DogCatManagement
                     post_Update.UserId = _userSession.UserId;
                     post_Update.Title = updateTitle;
                     post_Update.Content = updateContent;
+                    post_Update.Status = "Pending";
                     postRepository.UpdatePost(post_Update);
                     MessageBox.Show("Post updated successfully!!!");
                 }
